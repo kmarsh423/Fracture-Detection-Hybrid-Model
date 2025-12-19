@@ -62,7 +62,7 @@ For suspected fractures, **Grad-CAM** is computed from the final convolutional l
 Two quantitative measures are extracted:
 
 - **Entropy** — measures how focused the attention is  
-- **Activated area ratio** — fraction of pixels exceeding 50% of the maximum Grad-CAM response  
+- **Activated area ratio** — fraction of pixels exceeding $\alpha$ the maximum Grad-CAM response  
 
 Diffuse or spatially implausible activations are treated as unreliable.
 
@@ -96,6 +96,7 @@ Reported metrics include:
 - **ROC-AUC** for the CNN classifier (threshold-independent)
 
 Hyperparameter EDA is used to analyze **risk–coverage tradeoffs** and select a recall-leaning operating point with meaningful abstention.
+
 
 
 
