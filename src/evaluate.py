@@ -19,6 +19,9 @@ from sklearn.metrics import (
 
 from pathlib import Path
 
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+DATA_ROOT = PROJECT_ROOT / "data"
+
 current_dir = Path.cwd()
 
 class GradCAM:
@@ -251,8 +254,7 @@ def main():
   valid_df = pd.read_csv(f'{str(current_dir).replace('src','')}/data/valid_image_paths.csv',
                        header=None,
                        names=['path'])
-  val_data = MURADataset(df=valid_df, data_root='c:/Users/marzk/Documents/Coding/AI/imageClassification/data')
-
+  val_data = MURADataset(df=valid_df, data_root=DATA_ROOT)
   # Load model
   model = FractureNet(backbone='resnet18', pretrained=True)
   model.load_state_dict(torch.load('best_model.pt', map_location=device))
@@ -297,3 +299,4 @@ def main():
 
 if __name__ == '__main__':
   main()
+
