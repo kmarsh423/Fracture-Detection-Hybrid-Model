@@ -72,14 +72,14 @@ Diffuse or spatially implausible activations are treated as unreliable.
 
 The final system output is:
 
-\[
-  y =
-  \begin{cases}
-  \text{Negative}, & p < p_{\text{low}} \\
-  \text{Positive}, & p \ge p_{\text{low}} \;\wedge\; \text{localization confident} \\
-  \text{Inconclusive}, & \text{otherwise}
-  \end{cases}
-\]
+$$
+y =
+\begin{cases}
+\text{Negative}, & p < p_{\text{low}} \\
+\text{Positive}, & p \ge p_{\text{low}} \;\wedge\; \text{localization confident} \\
+\text{Inconclusive}, & \text{otherwise}
+\end{cases}
+$$
 
 This introduces a principled **abstention mechanism**, improving safety and interpretability.
 
@@ -96,5 +96,6 @@ Reported metrics include:
 - **ROC-AUC** for the CNN classifier (threshold-independent)
 
 Hyperparameter EDA is used to analyze **risk–coverage tradeoffs** and select a recall-leaning operating point with meaningful abstention.
+
 
 
