@@ -4,7 +4,7 @@
 This project implements a **hybrid medical imaging system for fracture detection using X-ray scans from the Stanford MURA dataset.**
 The system is designed as a **high-recall screening tool** that combines:
  - A **CNN classifier** to detect the presence of fractures
- - A **Grad-CAM-based localization confidence module** to decide whether th emodel can confidently identify <i>where</i> a fracture is located
+ - A **Grad-CAM-based localization confidence module** to decide whether the model can confidently identify <i>where</i> a fracture is located
 
 Rather than forcing a binary decision, the system outputs **three possible outcomes**:
  - **Negative**: no fracture detected
@@ -101,6 +101,15 @@ Hyperparameter EDA is used to analyze **risk–coverage tradeoffs** and select a
 
 ## Project Structure
 ```text
+data/
+├── train/   # Train dataset     
+├──── ...
+├── valid/   # Validation dataset
+├──── ...        
+├── train_image_paths.csv         
+├── train_labeled_studies.csv         
+├── valid_image_paths.csv          
+├── valid_labeled_studies.csv         
 src/
 ├── dataset.py        # MURA dataset handling
 ├── model.py          # CNN backbone
@@ -130,6 +139,7 @@ notebooks/
 - Segmentation-aware localization
 - Calibration of uncertainty estimates
 - External dataset validation
+
 
 
 
