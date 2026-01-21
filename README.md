@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Fracture Detection with Hybrid CNN + Grad-CAM Triage
 
 ## Overview
@@ -147,6 +146,7 @@ notebooks/
 
 
 
+
 =======
 # Fracture Detection with Hybrid CNN + Grad-CAM Triage
 
@@ -245,6 +245,3 @@ Reported metrics include:
 - **ROC-AUC** for the CNN classifier (threshold-independent)
 
 Hyperparameter EDA is used to analyze **risk–coverage tradeoffs** and select a recall-leaning operating point with meaningful abstention.
-
-
->>>>>>> 37d3db4 (added some fixes)
