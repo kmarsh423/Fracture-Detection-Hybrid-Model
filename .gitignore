@@ -1,7 +1,11 @@
 data
-notebooks\grid_search_output.csv
+notebooks/grid_search_output.csv
 venv
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 src\__pycache__
 >>>>>>> 37d3db4 (added some fixes)
+=======
+src/__pycache__
+>>>>>>> d3ba7ac (updated gitignore)
