@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 tensorflow
 torch
 pandas
@@ -9,3 +10,16 @@ ipykernal
 scikit-image
 tqdm
 opencv-python
+=======
+tensorflow
+torch
+pandas
+torchvision
+scikit-learn
+matplotlib
+seaborn
+ipykernal
+scikit-image
+tqdm
+opencv-python
+>>>>>>> 37d3db4 (added some fixes)

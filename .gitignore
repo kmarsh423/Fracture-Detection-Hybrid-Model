@@ -1,3 +1,7 @@
 data
 notebooks\grid_search_output.csv
 venv
+<<<<<<< HEAD
+=======
+src\__pycache__
+>>>>>>> 37d3db4 (added some fixes)
