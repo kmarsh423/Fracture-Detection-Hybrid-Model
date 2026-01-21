@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
@@ -174,7 +173,6 @@ def main():
 if __name__ == '__main__':
 
   main()
-=======
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
@@ -346,4 +344,3 @@ def main():
 
 if __name__ == '__main__':
   main()
->>>>>>> 37d3db4 (added some fixes)

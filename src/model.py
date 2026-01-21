@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import torch.nn as nn
 import torchvision.models as models
 
@@ -42,7 +41,6 @@ class FractureNet(nn.Module):
     pooled = self.pool(features).flatten(1) # [B, C, 1, 1] -> [B, C]
     logits = self.classifier(pooled).squeeze(1) # [B, 1] -> [B]
     return logits
-=======
 import torch.nn as nn
 import torchvision.models as models
 
@@ -86,4 +84,3 @@ class FractureNet(nn.Module):
     pooled = self.pool(features).flatten(1) # [B, C, 1, 1] -> [B, C]
     logits = self.classifier(pooled).squeeze(1) # [B, 1] -> [B]
     return logits
->>>>>>> 37d3db4 (added some fixes)
