@@ -246,7 +246,7 @@ Hyperparameter EDA is used to analyze **risk–coverage tradeoffs** and select a
 
 ---
 
-### Conclusion
+## Conclusion
 
 This project demonstrates a hybrid approach to fracture detection that combines a high-recall CNN classifier with Grad-CAM–based localization confidence to enable uncertainty-aware decision making. Rather than forcing a binary prediction for every X-ray image, the system explicitly allows for inconclusive outcomes when the model’s localization confidence is insufficient. This design better reflects real clinical workflows, where uncertain cases are deferred for expert review instead of being misclassified.
 
