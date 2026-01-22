@@ -146,8 +146,6 @@ notebooks/
 
 
 
-
-=======
 # Fracture Detection with Hybrid CNN + Grad-CAM Triage
 
 ## Overview
@@ -245,3 +243,23 @@ Reported metrics include:
 - **ROC-AUC** for the CNN classifier (threshold-independent)
 
 Hyperparameter EDA is used to analyze **risk–coverage tradeoffs** and select a recall-leaning operating point with meaningful abstention.
+
+---
+
+### Conclusion
+
+This project demonstrates a hybrid approach to fracture detection that combines a high-recall CNN classifier with Grad-CAM–based localization confidence to enable uncertainty-aware decision making. Rather than forcing a binary prediction for every X-ray image, the system explicitly allows for inconclusive outcomes when the model’s localization confidence is insufficient. This design better reflects real clinical workflows, where uncertain cases are deferred for expert review instead of being misclassified.
+
+The figure below illustrates the risk–coverage tradeoff of the hybrid system. Each point represents a different configuration of classification and localization thresholds, evaluated in terms of coverage (the proportion of cases for which the system makes a confident decision) and accuracy on those confident cases. Color indicates the inconclusive rate, highlighting how abstention increases as coverage decreases.
+
+![Coverage vs Accuracy Figure](./results/Coverage_vs_Accuracy.png)
+
+As shown, increasing the inconclusive rate does not monotonically improve accuracy. While moderate abstention can remove some unreliable predictions, overly aggressive deferral also discards many correct cases, reducing overall usefulness. This behavior is expected, as Grad-CAM–based localization confidence is an imperfect proxy for correctness when only image-level labels are available.
+
+The highlighted operating region marks a practical compromise: a moderate inconclusive rate that preserves most of the classifier’s performance while deferring genuinely uncertain predictions. In this regime, the system achieves strong recall and reliable accuracy on confident cases, without excessive abstention.
+
+Overall, this work shows that interpretability tools such as Grad-CAM can be elevated from post-hoc explanations to active components in a decision system. By framing fracture detection as a selective prediction problem rather than a forced classification task, the hybrid approach prioritizes safety, transparency, and clinical realism—key considerations for medical machine learning applications.
+
+
+
+
