@@ -258,7 +258,7 @@ As shown, increasing the inconclusive rate does not monotonically improve accura
 
 The highlighted operating region marks a practical compromise: a moderate inconclusive rate that preserves most of the classifier’s performance while deferring genuinely uncertain predictions. In this regime, the system achieves strong recall and reliable accuracy on confident cases, without excessive abstention.
 
-Overall, this work shows that interpretability tools such as Grad-CAM can be elevated from post-hoc explanations to active components in a decision system. By framing fracture detection as a selective prediction problem rather than a forced classification task, the hybrid approach prioritizes safety, transparency, and clinical realism—key considerations for medical machine learning applications.
+Overall, this work shows that interpretability tools such as Grad-CAM can be elevated from post-hoc explanations to active components in a decision system. By framing fracture detection as a selective prediction problem rather than a forced classification task, the hybrid approach prioritizes safety, transparency, and clinical realism, which are key considerations for medical machine learning applications.
 
 
 
