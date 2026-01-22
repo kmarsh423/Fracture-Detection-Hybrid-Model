@@ -254,7 +254,7 @@ The figure below illustrates the risk–coverage tradeoff of the hybrid system. 
 
 ![Coverage vs Accuracy Figure](./results/Coverage_vs_Accuracy.png)
 
-As shown, increasing the inconclusive rate does not monotonically improve accuracy. While moderate abstention can remove some unreliable predictions, overly aggressive deferral also discards many correct cases, reducing overall usefulness. This behavior is expected, as Grad-CAM–based localization confidence is an imperfect proxy for correctness when only image-level labels are available.
+As shown, increasing the inconclusive rate does not monotonically improve accuracy. While moderate abstention can remove some unreliable predictions, overly aggressive deferral also discards many correct cases, reducing overall usefulness. This behavior is expected, as Grad-CAM based localization confidence is an imperfect proxy for correctness when only image level labels are available.
 
 The highlighted operating region marks a practical compromise: a moderate inconclusive rate that preserves most of the classifier’s performance while deferring genuinely uncertain predictions. In this regime, the system achieves strong recall and reliable accuracy on confident cases, without excessive abstention.
 
