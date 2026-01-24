@@ -229,16 +229,21 @@ def evaluate_hybrid(model: FractureNet, dataset, device, p_low: float = .22, ent
   return summary, (y_true.tolist(), y_sys.tolist(), probs, ents, areas)
 
 def overlay_cam(cam, image):
-  cam = cam.cpu().numpy()
-  cam = cv2.resize(cam, (image.shape[2], image.shape[1]))
-  cam = np.uint8(255 * cam)
+    cam = cam.cpu().numpy()
+    cam = cv2.resize(cam, (image.shape[2], image.shape[1]))
+    cam_u8 = np.uint8(255 * cam)
 
-  heatmap = cv2.applyColorMap(cam, cv2.COLORMAP_JET)
-  image = image.permute(1, 2, 0).cpu().numpy()
-  image = np.uint8(255 * image)
-  
-  overlay = 0.4 * heatmap + 0.6 * image
-  return np.uint8(overlay)
+    heatmap_bgr = cv2.applyColorMap(cam_u8, cv2.COLORMAP_JET)
+
+    img = image.permute(1, 2, 0).cpu().numpy()
+    img = np.uint8(255 * img)
+
+    overlay_bgr = cv2.addWeighted(heatmap_bgr, 0.6, img, 0.4, 0)
+
+    # ✅ Convert to RGB for matplotlib
+    overlay_rgb = cv2.cvtColor(overlay_bgr, cv2.COLOR_BGR2RGB)
+    return overlay_rgb
+
 
 def load_original_grayscale(dataset, index):
   abs_path = dataset.df.iloc[index]['abs_path']
